@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">METAR weather</string>
+    <string name="station_name">ICAO station name</string>
+    <string name="update_interval">Update interval (in minutes)</string>
+    <string name="autostart">Start after device boot</string>
+    <string name="apply">Apply settings</string>
+    <string name="start_service">Start service</string>
+    <string name="stop_service">Stop service</string>
+    <string name="settings_saved">Settings saved</string>
+    <string name="no_data">No data available</string>
+    <string name="light">light</string>
+    <string name="heavy">heavyno precipitation</string>
+    <string name="fog">fog</string>
+    <string name="mist">mist</string>
+    <string name="smoke">smoke</string>
+    <string name="dstorm">desert storm</string>
+    <string name="blsn">blowing snow</string>
+    <string name="rasn">rain and snow</string>
+    <string name="shsn">shower snow</string>
+    <string name="shra">shower rain</string>
+    <string name="snow">snow</string>
+    <string name="rain">rain</string>
+    <string name="fzra">freezed rain</string>
+    <string name="ts">thunderstorm</string>
+    <string name="tsra">thunderstorm with rain</string>
+    <string name="tsgr">thunderstorm with hail</string>
+    <string name="tssn">thunderstorm with snow</string>
+    <string name="gr">hail</string>
+    <string name="noprec">no precipitation</string>
+    <string name="temperature">Temperature</string>
+    <string name="fetch_error">data load error</string>
+    <string name="wrong_data">data corrupted</string>
+
+</resources>

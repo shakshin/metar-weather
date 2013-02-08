@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Погода METAR</string>
+    <string name="station_name">Код аэропорта ICAO</string>
+    <string name="update_interval">Интервал обновления (минуты)</string>
+    <string name="autostart">Запуск после загрузки</string>
+    <string name="apply">Применить настройки</string>
+    <string name="start_service">Запустить службу</string>
+    <string name="stop_service">Остановить службу</string>
+    <string name="settings_saved">Настройки сохранены</string>
+    <string name="no_data">нет данных</string>
+    <string name="light">легк.</string>
+    <string name="heavy">сильн.</string>
+    <string name="fog">туман</string>
+    <string name="mist">дымка</string>
+    <string name="smoke">дым</string>
+    <string name="dstorm">пыльн. буря</string>
+    <string name="blsn">метель</string>
+    <string name="rasn">дожь со снегом</string>
+    <string name="shsn">ливневый снег</string>
+    <string name="shra">ливень</string>
+    <string name="snow">снег</string>
+    <string name="rain">дождь</string>
+    <string name="fzra">ледяной дождь</string>
+    <string name="ts">гроза</string>
+    <string name="tsra">гроза+дождь</string>
+    <string name="tsgr">гроза+град</string>
+    <string name="tssn">гроза+снег</string>
+    <string name="gr">град</string>
+    <string name="noprec">без осадков</string>
+    <string name="temperature">Температура</string>
+    <string name="fetch_error">нет подключения</string>
+    <string name="wrong_data">неверные данные</string>
+
+</resources>
