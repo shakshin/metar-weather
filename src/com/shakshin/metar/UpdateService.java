@@ -20,9 +20,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Binder;
 import android.os.IBinder;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.TaskStackBuilder;
-import android.util.Log;
 
 public class UpdateService extends Service {
 	private String lastTemp, lastCond;
@@ -93,26 +90,6 @@ public class UpdateService extends Service {
 		lastTemp = getString(R.string.no_data);
 		lastCond = getString(R.string.no_data);
 		
-		
-		
-		/*
-		NotificationCompat.Builder mbuilder = new NotificationCompat.Builder(this)
-			.setSmallIcon(R.drawable.ic_launcher)
-			.setContentTitle(getString(R.string.app_name))
-			.setAutoCancel(false)
-			.setOngoing(true)
-			.setContentText(getString(R.string.no_data));
-			
-		Intent resultIntent = new Intent(this, SettingsActivity.class);
-		TaskStackBuilder sbuilder = TaskStackBuilder.create(this);
-		sbuilder.addParentStack(SettingsActivity.class);
-		sbuilder.addNextIntent(resultIntent);
-		PendingIntent rpi = sbuilder.getPendingIntent(0,  PendingIntent.FLAG_UPDATE_CURRENT);
-		mbuilder.setContentIntent(rpi);
-		nm = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-		
-		ntf = mbuilder.build();
-		nm.notify(123321, ntf); */
 		startForeground(123321, notification(getString(R.string.app_name), getString(R.string.no_data)));
 		
 		SharedPreferences settings = getSharedPreferences("com.shakshin.metar", 0);
@@ -227,21 +204,20 @@ public class UpdateService extends Service {
 		}
 	}
 	
-	public Notification notification(String temp, String cond) {
-		NotificationCompat.Builder mbuilder = new NotificationCompat.Builder(this)
-			.setSmallIcon(R.drawable.ic_launcher)
-			.setContentTitle(getString(R.string.temperature) + ": " + temp)
-			.setAutoCancel(false)
-			.setOngoing(true)
-			.setContentText(cond);
-		Intent resultIntent = new Intent(this, SettingsActivity.class);
-		TaskStackBuilder sbuilder = TaskStackBuilder.create(this);
-		sbuilder.addParentStack(SettingsActivity.class);
-		sbuilder.addNextIntent(resultIntent);
-		PendingIntent rpi = sbuilder.getPendingIntent(0,  PendingIntent.FLAG_UPDATE_CURRENT);
-		mbuilder.setContentIntent(rpi);
-		Notification nt = mbuilder.build();
-		nm.notify(123321, nt);
+	public Notification notification(String temp, String condition) {
+		Notification nt = new Notification(R.drawable.ic_launcher, getString(R.string.app_name), System.currentTimeMillis());
+		
+		nt.setLatestEventInfo(
+				this, 
+				getString(R.string.temperature) + ": " + temp, 
+				condition, 
+				PendingIntent.getActivity(
+						getApplicationContext(), 0, 
+						new Intent(this, SettingsActivity.class), 0
+				)
+		);
+		
+		this.nm.notify(123321, nt);
 		return nt;
 	}
 
