@@ -206,7 +206,7 @@ public class UpdateService extends Service {
 	
 	public Notification notification(String temp, String condition) {
 		Notification nt = new Notification(R.drawable.ic_launcher, getString(R.string.app_name), System.currentTimeMillis());
-		
+		nt.flags |= nt.FLAG_ONGOING_EVENT;
 		nt.setLatestEventInfo(
 				this, 
 				getString(R.string.temperature) + ": " + temp, 
@@ -216,6 +216,7 @@ public class UpdateService extends Service {
 						new Intent(this, SettingsActivity.class), 0
 				)
 		);
+		
 		
 		this.nm.notify(123321, nt);
 		return nt;
